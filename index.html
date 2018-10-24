@@ -14,30 +14,6 @@
 <!-- ************************* -->
 <script>
 
-"use strict";
-
-
-var user = {
-	firstName : "Василий",
-	secondName : "Алибабаев",
-	patronymic : "Алибабаевич"
-};
-
-var user1 = {
-	firstName : "Василий1",
-	secondName : "Алибабаев1",
-	patronymic : "Алибабаевич1"
-};
-
-function sayName(first, second){
-	alert(this[first] + " " + this[second]);
-}
-
-
-
-var a = sayName.bind(user, "firstName", "secondName");
-console.log(a)
-sayName.bind(user1, "firstName", "patronymic"); 
 
 </script>
 </div>
