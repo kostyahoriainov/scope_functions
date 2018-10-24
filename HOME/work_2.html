@@ -57,9 +57,7 @@ function groupUsers(obj, func){
         var age = obj[i]['age']; //берем значение возраста из объектов
         if (usersGroup.indexOf(age) === -1) { //проверяем существует ли в созданном массиве данное значение
             usersGroup.push(age); //добавляем
-        } else {
-            console.log('exist')
-        }   
+        }    
     }
     func(usersGroup);
 };
@@ -71,7 +69,6 @@ function createOption(array){
         option.innerText = array[i];
         usersSelect.appendChild(option);
     }
-
 }
 
 function showUsers() {

@@ -32,7 +32,7 @@ function map(array, func){
     arr.sort();
     console.log(arr);
     for (let i = 0; i < array.length; i++) {
-        array[i] = createElement(array[i]);
+        array[i] = func(array[i]);
         console.log(array[i]);
         list.appendChild(array[i]);
     }
