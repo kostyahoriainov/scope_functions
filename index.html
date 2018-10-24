@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+ <head>
+    <title>index.html</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="_/css/style.css">
+	<script src="_/js/script.js"></script>
+ </head>
+<body>
+<div class="container">
+<h1>index.html</h1>
+<ul id="results"></ul>
+<!-- ************************* -->
+<script>
+
+"use strict";
+
+
+var user = {
+	firstName : "Василий",
+	secondName : "Алибабаев",
+	patronymic : "Алибабаевич"
+};
+
+var user1 = {
+	firstName : "Василий1",
+	secondName : "Алибабаев1",
+	patronymic : "Алибабаевич1"
+};
+
+function sayName(first, second){
+	alert(this[first] + " " + this[second]);
+}
+
+
+
+var a = sayName.bind(user, "firstName", "secondName");
+console.log(a)
+sayName.bind(user1, "firstName", "patronymic"); 
+
+</script>
+</div>
+</body>
+</html>

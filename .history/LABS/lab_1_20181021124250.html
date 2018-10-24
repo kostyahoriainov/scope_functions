@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+ <head>
+    <title>Callback функции</title>
+    <meta charset="utf-8">
+ </head>
+<body>
+<div class="container">
+<h1>Callback функции</h1>
+<div id="results"></div>
+<!-- ************************* -->
+<script>
+
+/* Написать функцию forEach с применением callback функции
+  Функция  принимает первым аргументом массив, вторым аргументом - callback функцию, которая поочередно будет принимать элеменет массива и  переводить его  в верхний регистр
+  Usagе: forEach(arr, function(el){ 
+		console.log( .... );
+  })
+*/
+const arr = ["Bill", "Tom", "Sam"]
+
+function toUpperCase(el) {
+  return el.toUpperCase();
+}
+
+function forEach(arr, toUpperCase) {
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = toUpperCase(arr[i]);
+  }
+  console.log(arr)
+}
+
+forEach(arr, toUpperCase);
+
+arr.forEach(function(item, index, array){
+  array[index] = item.toLowerCase();
+})
+
+console.log(arr)
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+ <head>
+    <title>Callback функции</title>
+    <meta charset="utf-8">
+ </head>
+<body>
+<div class="container">
+<h1>Callback функции</h1>
+<div id="results"></div>
+<!-- ************************* -->
+<script>
+
+// Сделать сортировку массива let values = [ 213, 16, 2058, 54, 10, 1965, 57, 9 ];
+
+let arr = [ 213, 16, 2058, 54, 10, 1965, 57, 9 ];
+let arr1 = [ 213, 16, 2058, 54, 10, 1965, 57, 9 ];
+
+function sort(arr, callback) {
+
+}
+
+function compare() {
+
+}
+
+sort(arr1, compare)
+
+arr.sort(function(a, b){
+    return b - a;
+});
+
+console.log(arr)
+
+
+
+</script>
+</div>
+</body>
+</html>
