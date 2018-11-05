@@ -19,30 +19,36 @@
 */
 const arr = ["Bill", "Tom", "Sam"]
 
-function toUpperCase(el) {
+arr.forEach(function(el){
+  console.log(el.toUpperCase());
+})
+
+function toUpperCase (el){
   return el.toUpperCase();
 }
 
-function forEach(arr, toUpperCase) {
-  for (var i = 0; i < arr.length; i++) {
+function forEach (arr, toUpperCase) {
+  for (let i = 0; i < arr.length; i++) {
     arr[i] = toUpperCase(arr[i]);
+    
   }
   console.log(arr)
 }
 
 forEach(arr, toUpperCase);
 
-arr.forEach(function(item, index, array){
-  array[index] = item.toLowerCase();
+arr.forEach(function(el, index, array){
+  array[index] = el.toLocaleLowerCase();
 })
 
-console.log(arr)
+console.log(arr);
 
-var newArr = arr.map(function(item, index, array){
-  return item.toLowerCase();
+var newArr = arr.map(function(el, index, array){
+  return el.toLowerCase();
 })
 
-console.log(newArr)
+console.log(newArr);
+
 </script>
 </div>
 </body>

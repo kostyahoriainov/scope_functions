@@ -28,11 +28,25 @@ let arr = ["Tom", "Steve", "Bill", "Rita", "Pete", "Ashley"];
 const list = document.getElementById('list');
 
 // Сигнатура map
-function map(list, fn){
-    // todo
+function map(array, func){
+    arr.sort();
+    console.log(arr);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = func(array[i]);
+        console.log(array[i]);
+        list.appendChild(array[i]);
+    }
  }
 
+function createElement (el){
+    var item = document.createElement('li');
+    item.classList = ('list-group-item');
+    item.innerText = el;
+    console.log(el);
+    return item;
+}
 
+map(arr, createElement);
 
 </script>
 

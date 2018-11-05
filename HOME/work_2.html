@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-sm-3">
             <div class="form-group">
-                <select id="users-select" class="custom-select">
+                <select id="users-select" class="custom-select" onchange="showUsers();">
                     <option>Choose age</option>
                 </select>
             </div>
@@ -29,7 +29,7 @@
 // 1. Сгрупировать пользователей по возрасту и вывести
 //    в элемент select с value=""
 
-// 2. При віборе соответствующего option осуществить вывод
+// 2. При выборе соответствующего option осуществить вывод
 //    соответствующих пользователей в элемент <div id="res"></div>
 
 
@@ -47,6 +47,48 @@ let users = [
  {id: 8, name: "Jim", age: "40"},
  {id: 9, name: "Willy", age: "20"}
 ]
+
+groupUsers(users, createOption);
+
+
+function groupUsers(obj, func){
+    var usersGroup = []; //создаем массив для записи уникальных значений возраста 
+    for (let i = 0; i < obj.length; i++) { //обходим по массиву users
+        var age = obj[i]['age']; //берем значение возраста из объектов
+        if (usersGroup.indexOf(age) === -1) { //проверяем существует ли в созданном массиве данное значение
+            usersGroup.push(age); //добавляем
+        }    
+    }
+    func(usersGroup);
+};
+
+function createOption(array){ 
+    for (let i = 0; i < array.length; i++) { 
+        var option = document.createElement('option');
+        option.value = array[i];
+        option.innerText = array[i];
+        usersSelect.appendChild(option);
+    }
+}
+
+function showUsers() {
+    let selectedIndex = usersSelect.selectedIndex,
+        selectedOptions = usersSelect.options,
+        selectedValue = selectedOptions[selectedIndex].value;
+        res.innerText = '';
+    for (let i = 0; i < users.length; i++) {
+        if (selectedValue == users[i]['age']) {
+            res.appendChild(createElement(users[i]));
+        }
+    }
+}
+
+function createElement(index) {
+    var item = document.createElement('p');
+    item.innerText = index['name'];
+    return item;
+};
+
 
 </script>
 
